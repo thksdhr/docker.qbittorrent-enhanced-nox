@@ -9,8 +9,8 @@ function INT_CHECK() {
         return 1 # 返回非零值表示失败
     fi
 
-    if [[ $1 =~ ^-?[0-9]+$ ]]; then
-        echo "检测通过，这是一个整数: $1"
+    if [[ $2 =~ ^-?[0-9]+$ ]]; then
+        echo "当前 $1 = $2"
     else
         echo "请检查输入的值是否为整数"
         echo "exiting..."
@@ -20,8 +20,8 @@ function INT_CHECK() {
 
 # 检测环境变量是否正常
 echo "检测环境变量是否正确设置..."
-INT_CHECK ${WEBUI_PORT}
-INT_CHECK ${TORRENTING_PORT}
+INT_CHECK WEBUI端口 ${WEBUI_PORT}
+INT_CHECK Torrenting端口 ${TORRENTING_PORT}
 
 # 启动 qBittorrent
 ./qbittorrent-nox --confirm-legal-notice \
