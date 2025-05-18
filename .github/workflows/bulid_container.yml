@@ -26,8 +26,8 @@ jobs:
             
             -
                 name: "构建和推送 Docker 镜像"
+                working-directory: ./docker.build
                 run: |
                     pwd
-                    cd ./docker.build
                     ./build.sh
                     docker push taozig/qbittorrent-enhanced-nox:latest
