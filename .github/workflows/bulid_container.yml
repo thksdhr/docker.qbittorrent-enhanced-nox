@@ -14,9 +14,6 @@ jobs:
             -
                 name: "获取 Build 文件"
                 uses: actions/checkout@v4
-                with:
-                    sparse-checkout: .
-            
             -
                 name: "获取当前工作目录"
                 run: ls -la
