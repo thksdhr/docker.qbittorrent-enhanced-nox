@@ -23,3 +23,9 @@ jobs:
                     pwd
                     ./docker.test.build/build.sh
                     docker save taozig/qbittorrent-enhanced-nox:latest -o qbittorrent-enhanced-nox.tar
+            -
+                name: "上传 Docker 镜像"
+                uses: actions/upload-artifact@v4
+                with:
+                    name: qbittorrent-enhanced-nox.image.tar
+                    path: qbittorrent-enhanced-nox.tar
