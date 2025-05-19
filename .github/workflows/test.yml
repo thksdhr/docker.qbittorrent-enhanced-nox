@@ -17,6 +17,13 @@ jobs:
             -
                 name: "获取当前工作目录"
                 run: ls -la
+
+            -
+                name: "登录 Docker Hub"
+                uses: docker/login-action@v3
+                with:
+                    username: ${{ secrets.DOCKER_HUB_USERNAME }}
+                    password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
             -
                 name: "构建测试 Docker 镜像"
                 run: |
