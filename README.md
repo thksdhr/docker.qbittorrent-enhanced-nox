@@ -1,5 +1,10 @@
-# docker.qbittorrent-enhanced-nox
-一个公开维护的 qbittorrent-enhanced-nox 容器镜像，使用 Dockerfile 创建.
+# Docker qBittorrent Enhanced Edition
+一个公开维护的 qBittorrent Enhanced Edition 容器镜像，使用 Dockerfile 创建.
+
+整合了 VueTorrent WEB UI ，将第三方 WEB UI 路径设置为 /programs/vuetorrent 即可使用
+
+### Tips
+> 建议使用 host 模式运行，否则 UPnP 功能可能会失效 
 
 ### Docker Compose
 ```
