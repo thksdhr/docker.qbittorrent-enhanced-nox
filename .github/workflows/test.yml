@@ -1,0 +1,25 @@
+name: "构建测试的 Docker 镜像"
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "构建 Docker 镜像..."
+
+            -
+                name: "获取 Build 文件"
+                uses: actions/checkout@v4
+            -
+                name: "获取当前工作目录"
+                run: ls -la
+            -
+                name: "构建测试 Docker 镜像"
+                run: |
+                    pwd
+                    ./docker.test.build/build.sh
+                    docker save taozig/qbittorrent-enhanced-nox:latest -o qbittorrent-enhanced-nox.tar
